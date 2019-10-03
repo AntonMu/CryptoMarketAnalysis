@@ -160,7 +160,7 @@ Remitano,remitano,Seychelles,🇸🇨,Africa,,True,Unrealistic Volumes,158.0
 RightBTC,rightbtc,United Arab Emirates,🇦🇪,Middle East,,False,,159.0
 SafeCoin,safecoin,UK,🇬🇧,Western Europe,,False,,160.0
 Simex,simex,Russia,🇷🇺,Eastern Europe,,True,Derivatives,161.0
-SingularityX,singularityx,Lithuania,🇱🇹,Eastern Europe,,False,,162.0
+SingularityX,singularityx,Lithuania,🇱🇹,Eastern Europe,,,,162.0
 smartrade,smartrade,Canada,🇨🇦,North America,,False,,163.0
 StocksExchange,stocksexchange,Unknown,🏴‍,Unknown,,False,,164.0
 Switcheo,switcheo,Singapore,🇸🇬,East Asia,,False,,165.0
@@ -234,3 +234,7 @@ Yacuna,yacuna,UK,🇬🇧,Western Europe,,False,,233.0
 Yunbi,yunbi,China (formerly),🇨🇳,East Asia,,False,,234.0
 Zecoex,zecoex,India,🇮🇳,South Asia,,False,,235.0
 zloadr,zloadr,UK,🇬🇧,Western Europe,,False,,236.0
+bitflyereu,bitflyereu,Luxembourg,,Western Europe,,False,,237.0
+deribit,deribit,Netherlands,????,Western Europe,,False,,238.0
+binanceus,binanceus,USA,🇺🇸,North America,,False,,239.0
+bitflyerus,bitflyerus,USA,🇺🇸,North America,,False,,240.0

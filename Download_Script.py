@@ -14,7 +14,7 @@ Result_Path = 'Results'
 for path in [Data_Path,Result_Path]:
     if not os.path.exists(path):
         os.makedirs(path)
-        
+
 def unix_time(d):
     return calendar.timegm(d.timetuple())
 
@@ -64,7 +64,6 @@ def download_rows(pair_list,res_index=0,start=0,end=0,sleep_time=60):
 
 end_date = datetime.today()
 
-# os.remove(os.path.join(Data_Path,"CCC_new.db"))
 conn = sqlite3.connect(os.path.join(Data_Path,"CCC"+str(datetime.today())[:10]+".db"))
 
 #Benchmark

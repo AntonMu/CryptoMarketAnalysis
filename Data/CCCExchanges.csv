@@ -1,0 +1,236 @@
+Source,Source_small,Country,Flag,Region,Remark,Excluded,Reason for Exclusion,rank
+ABCC,abcc,Singapore,🇸🇬,East Asia,,False,,1.0
+ACX,acx,Australia,🇺🇸,Oceania,,False,,2.0
+AidosMarket,aidosmarket,Unknown,🏴‍,Unknown,,False,,3.0
+aliexchange,aliexchange,Estonia,????,Eastern Europe,,False,,4.0
+alphaex,alphaex,Malta,🇲🇹,Western Europe,,False,,5.0
+BCEX,bcex,Hong Kong,🇭🇰,East Asia,,False,,6.0
+Bgogo,bgogo,Cayman Islands,🇰🇾,Central America,,True,Transaction Mining,7.0
+Bibox,bibox,China (formerly),🇨🇳,East Asia,,False,,8.0
+BigONE,bigone,Unknown,🏴‍,Unknown,,False,,9.0
+Binance,binance,China (formerly),🇨🇳,East Asia,,False,,10.0
+Binanceje,Binanceje,USA,🇺🇸,North America,,False,,11.0
+bingcoins,bingcoins,New Zealand,🇳🇿,Oceania,,False,,12.0
+Bit2C,bit2c,Israel,🇮🇱,Middle East,,False,,13.0
+BitBank,bitbank,Japan,🇯🇵,East Asia,,False,,14.0
+BitBay,bitbay,Poland,🇵🇱,Eastern Europe,,False,,15.0
+BitexBook,bitexbook,Saint Vincent and the Grenadines,🇻🇨,Central America,,False,,16.0
+Bitfinex,bitfinex,Hong Kong,🇭🇰,East Asia,,False,,17.0
+bitFlyer,bitflyer,Japan,🇯🇵,East Asia,,False,,18.0
+bitFlyerFX,bitflyerfx,Japan,🇯🇵,East Asia,,True,Derivatives,19.0
+Bitforex,bitforex,Singapore,🇸🇬,East Asia,,False,,20.0
+Bithumb,bithumb,South Korea,🇰🇷,East Asia,,False,,21.0
+Bitinfi,bitinfi,Hong Kong,🇭🇰,East Asia,,False,,22.0
+Bitkub,bitkub,Thailand,🇹🇭,Southeast Asia,,False,,23.0
+Bitlish,bitlish,UK,🇬🇧,Western Europe,,False,,24.0
+BitMarket,bitmarket,Poland,🇵🇱,Eastern Europe,,False,,25.0
+BitMart,bitmart,USA,🇺🇸,North America,,False,,26.0
+bitmax,bitmax,Unkown,🏴‍,Unknown,,False,,27.0
+Bitmex,bitmex,Seychelles,🇸🇨,Africa,,True,Derivatives,28.0
+Bitpoint,bitpoint,Malaysia,🇲🇾,East Asia,,False,,29.0
+Bitsane,bitsane,Ireland,????,Western Europe,,False,,30.0
+Bitshares,bitshares,DEX,🏳,None,,False,,31.0
+Bitso,bitso,Mexico,🇲🇽,North America,,False,,32.0
+BitSquare,bitsquare,Dex,🏳,None,,False,,33.0
+Bitstamp,bitstamp,UK,🇬🇧,Western Europe,,False,,34.0
+BitTrex,bittrex,USA,🇺🇸,North America,,False,,35.0
+BitZ,bitz,Hong Kong,🇭🇰,East Asia,,False,,36.0
+Blackturtle,blackturtle,DEX,🏳,None,,False,,37.0
+Bleutrade,bleutrade,Unknown,🏴‍,Unknown,,False,,38.0
+Bluebelt,bluebelt,Japan,🇯🇵,East Asia,,False,,39.0
+Braziliex,braziliex,Brazil,🇧🇷,South America,,False,,40.0
+BTCAlpha,btcalpha,Russia,🇷🇺,Eastern Europe,,False,,41.0
+BTCBOX,btcbox,Japan,🇯🇵,East Asia,,False,,42.0
+BTCExchange,btcexchange,Lithuania,🇱🇹,Eastern Europe,,False,,43.0
+BTCMarkets,btcmarkets,Australia,🇺🇸,Oceania,,False,,44.0
+BTCTurk,btcturk,Turkey,🇹🇷,Eastern Europe,,False,,45.0
+Buda,buda,Chile,🇨🇱,South America,,False,,46.0
+bw,bw,Australia,🇺🇸,Oceania,,False,,47.0
+BXinth,bxinth,Thailand,🇹🇭,Southeast Asia,,False,,48.0
+Catex,catex,China (formerly),🇨🇳,East Asia,China (currently),False,,49.0
+CBX,cbx,UAE,🇦🇪,,,False,,50.0
+CCEX,ccex,Germany,🇩🇪,Western Europe,,False,,51.0
+Cexio,cexio,UK,🇬🇧,Western Europe,,False,,52.0
+chainrift,chainrift,USA,🇺🇸,North America,,False,,53.0
+ChileBit,chilebit,Chile,🇨🇱,South America,,False,,54.0
+cobinhood,cobinhood,Taiwan,🇨🇭,Western Europe,,False,,55.0
+Codex,codex,Estonia,????,Eastern Europe,,False,,56.0
+coinall,coinall,Hong Kong,🇭🇰,East Asia,,False,,57.0
+Coinbase,coinbase,USA,🇺🇸,North America,,False,,58.0
+CoinBene,coinbene,Singapore,🇸🇬,East Asia,,False,,59.0
+Coincheck,coincheck,Japan,🇯🇵,East Asia,,True,No Fees,60.0
+CoinCorner,coincorner,Isle of Man,🇮🇲,Western Europe,,False,,61.0
+CoinDeal,coindeal,Cyprus,🇨🇾,Southern Europe,,False,,62.0
+CoinEx,coinex,Hong Kong,🇭🇰,East Asia,,False,,63.0
+CoinFalcon,coinfalcon,UK,🇬🇧,Western Europe,,False,,64.0
+coinfield,coinfield,Canada,🇨🇦,North America,,False,,65.0
+Coinfloor,coinfloor,UK,🇬🇧,Western Europe,,False,,66.0
+CoinHub,coinhub,Singapore,🇸🇬,East Asia,,False,,67.0
+CoinJar,coinjar,UK,🇬🇧,Western Europe,,False,,68.0
+Coinmate,coinmate,UK,🇬🇧,Western Europe,,False,,69.0
+Coinnest,coinnest,South Korea,🇰🇷,East Asia,,False,,70.0
+Coinone,coinone,South Korea,🇰🇷,East Asia,,False,,71.0
+CoinPulse,coinpulse,Panama,????,Central America,,False,,72.0
+Coinroom,coinroom,Poland,🇵🇱,Eastern Europe,,False,,73.0
+Coinsbit,coinsbit,Estonia,????,Eastern Europe,,False,,74.0
+CoinTiger,cointiger,China (formerly),🇨🇳,East Asia,,False,,75.0
+coinzest,coinzest,South Korea,🇰🇷,East Asia,,False,,76.0
+coss,coss,Netherlands,????,Western Europe,,False,,77.0
+crex24,crex24,Cyprus,🇨🇾,Southern Europe,,False,,78.0
+Cryptagio,cryptagio,Estonia,????,Eastern Europe,,False,,79.0
+CryptoBulls,cryptobulls,United Arab Emirates,🇦🇪,Middle East,,False,,80.0
+CryptoCarbon,cryptocarbon,UK,🇬🇧,Western Europe,,False,,81.0
+CryptoExchangeWS,cryptoexchangews,Italy,🇮🇹,Western Europe,,False,,82.0
+Cryptonit,cryptonit,UK,🇬🇧,Western Europe,,False,,83.0
+Cryptopia,cryptopia,New Zealand,🇳🇿,Oceania,,False,,84.0
+DDEX,ddex,DEX,🏳,None,,False,,85.0
+DEx,dex,DEX,🏳,None,,False,,86.0
+DigiFinex,digifinex,Singapore,🇸🇬,East Asia,,False,,87.0
+DSX,dsx,UK,🇬🇧,Western Europe,,False,,88.0
+eidoo,eidoo,Switzerland,🇨🇭,Western Europe,,False,,89.0
+EtherDelta,etherdelta,DEX,🏳,None,,False,,90.0
+Ethermium,ethermium,DEX,🏳,None,,True,Unrealistic Volumes,91.0
+Ethfinex,ethfinex,Hong Kong,🇭🇰,East Asia,,False,,92.0
+Everbloom,everbloom,USA,🇺🇸,North America,,False,,93.0
+Exenium,exenium,Russia,🇷🇺,Eastern Europe,,False,,94.0
+Exmo,exmo,UK,🇬🇧,Western Europe,,False,,95.0
+EXRATES,exrates,Indonesia,🇮🇩,East Asia,,False,,96.0
+ExtStock,extstock,UK,🇬🇧,Western Europe,,False,,97.0
+EXX,exx,Hong Kong,🇭🇰,East Asia,,True,Transaction Mining,98.0
+fatbtc,fatbtc,China (formerly),🇨🇳,East Asia,,False,,99.0
+FCCE,fcce,Japan,🇯🇵,East Asia,,False,,100.0
+FCoin,fcoin,China (formerly),🇨🇳,East Asia,China (currently),True,Transaction Mining,101.0
+Gatecoin,gatecoin,China (formerly),🇨🇳,East Asia,,False,,102.0
+Gateio,gateio,Unknown,🏴‍,Unknown,,False,,103.0
+Gemini,gemini,USA,🇺🇸,North America,,False,,104.0
+Globitex,globitex,Gibraltar,????,Western Europe,,False,,105.0
+Gneiss,gneiss,British Virgin Islands,🇻🇬,Western Europe,,False,,106.0
+gopax,gopax,South Korea,🇰🇷,East Asia,,False,,107.0
+Graviex,graviex,Russia,🇷🇺,Eastern Europe,,False,,108.0
+HADAX,hadax,China (formerly),🇨🇳,East Asia,,False,,109.0
+hbus,hbus,USA,🇺🇸,North America,,False,,110.0
+Hikenex,hikenex,Malaysia,🇲🇾,East Asia,,False,,111.0
+HitBTC,hitbtc,UK,🇬🇧,Western Europe,,False,,112.0
+huobijapan,huobijapan,Japan,🇯🇵,East Asia,,False,,113.0
+huobikorea,huobikorea,South Korea,🇰🇷,East Asia,,False,,114.0
+HuobiPro,huobipro,China (formerly),🇨🇳,East Asia,,False,,115.0
+iCoinbay,icoinbay,Marshall Islands,????,Oceania,,False,,116.0
+IDAX,idax,Mongolia,🇲🇳,East Asia,,False,,117.0
+idevex,idevex,Hong Kong,🇭🇰,East Asia,,False,,118.0
+IDEX,idex,DEX,🏳,None,,False,,119.0
+Incorex,incorex,Estonia,????,Eastern Europe,,False,,120.0
+IndependentReserve,independentreserve,Australia,🇺🇸,Oceania,,False,,121.0
+InstantBitex,instantbitex,UK,🇬🇧,Western Europe,,False,,122.0
+IQFinex,iqfinex,Switzerland,🇨🇭,Western Europe,,False,,123.0
+Ironex,ironex,China (formerly),🇨🇳,East Asia,,False,,124.0
+itBit,itbit,USA,🇺🇸,North America,,False,,125.0
+Korbit,korbit,South Korea,🇰🇷,East Asia,,False,,126.0
+Kraken,kraken,USA,🇺🇸,North America,,False,,127.0
+Kucoin,kucoin,China (formerly),🇨🇳,East Asia,,False,,128.0
+Kuna,kuna,Ukraine,🇺🇦,Eastern Europe,,False,,129.0
+LakeBTC,lakebtc,China (formerly),🇨🇳,East Asia,,False,,130.0
+LAToken,latoken,Russia,🇷🇺,Eastern Europe,,False,,131.0
+LBank,lbank,China (formerly),🇨🇳,East Asia,,True,Unrealistic Volumes,132.0
+Liqnet,liqnet,Singapore,🇸🇬,East Asia,,False,,133.0
+Liqui,liqui,Ukraine,🇺🇦,Eastern Europe,,False,,134.0
+Liquid,liquid,Japan,🇯🇵,East Asia,,True,No Fees,135.0
+LiveCoin,livecoin,Russia,🇷🇺,Eastern Europe,,False,,136.0
+LocalBitcoins,localbitcoins,DEX,🏳,None,,False,,137.0
+Luno,luno,UK,🇬🇧,Western Europe,,False,,138.0
+Lykke,lykke,Switzerland,🇨🇭,Western Europe,,False,,139.0
+MercadoBitcoin,mercadobitcoin,Brazil,🇧🇷,South America,,False,,140.0
+Minebit,minebit,South Korea,🇰🇷,East Asia,,False,,141.0
+NDAX,ndax,Canada,🇨🇦,North America,,False,,142.0
+Nebula,nebula,Singapore,🇸🇬,East Asia,,False,,143.0
+Neraex,neraex,Japan,🇯🇵,East Asia,,True,No Fees,144.0
+Nexchange,nexchange,UK,🇬🇧,Western Europe,,False,,145.0
+Nlexch,nlexch,Netherlands,????,Western Europe,,False,,146.0
+Nuex,nuex,Italy,🇮🇹,Western Europe,,False,,147.0
+oex,oex,Singapore,🇸🇬,East Asia,,False,,148.0
+OKCoin,okcoin,China (formerly),🇨🇳,East Asia,,False,,149.0
+OKEX,okex,Hong Kong,🇭🇰,East Asia,,False,,150.0
+OpenLedger,openledger,DEX,🏳,None,,False,,151.0
+Ore,ore,Unknown,🏴‍,Unknown,,False,,152.0
+P2PB2B,p2pb2b,Estonia,????,Eastern Europe,,False,,153.0
+Paymium,paymium,France,🇫🇷,Western Europe,,False,,154.0
+Poloniex,poloniex,USA,🇺🇸,North America,,False,,155.0
+primexbt,primexbt,Seychelles,🇸🇨,Africa,,False,,156.0
+QuadrigaCX,quadrigacx,Canada,🇨🇦,North America,,False,,157.0
+Remitano,remitano,Seychelles,🇸🇨,Africa,,True,Unrealistic Volumes,158.0
+RightBTC,rightbtc,United Arab Emirates,🇦🇪,Middle East,,False,,159.0
+SafeCoin,safecoin,UK,🇬🇧,Western Europe,,False,,160.0
+Simex,simex,Russia,🇷🇺,Eastern Europe,,True,Derivatives,161.0
+SingularityX,singularityx,Lithuania,🇱🇹,Eastern Europe,,False,,162.0
+smartrade,smartrade,Canada,🇨🇦,North America,,False,,163.0
+StocksExchange,stocksexchange,Unknown,🏴‍,Unknown,,False,,164.0
+Switcheo,switcheo,Singapore,🇸🇬,East Asia,,False,,165.0
+TheRockTrading,therocktrading,Malta,🇲🇹,Western Europe,,False,,166.0
+Threexbit,threexbit,Brazil,🇧🇷,South America,,False,,167.0
+Tidex,tidex,UK,🇬🇧,Western Europe,,False,,168.0
+Tokenomy,tokenomy,Singapore,🇸🇬,East Asia,,False,,169.0
+TokenStore,tokenstore,DEX,🏳,None,,False,,170.0
+TradeSatoshi,tradesatoshi,UK,🇬🇧,Western Europe,,False,,171.0
+TrustDEX,trustdex,UK,🇬🇧,Western Europe,,False,,172.0
+trxmarket,trxmarket,Cayman Islands,🇰🇾,Central America,,False,,173.0
+TuxExchange,tuxexchange,Canada,🇨🇦,North America,,False,,174.0
+Upbit,upbit,South Korea,🇰🇷,East Asia,,False,,175.0
+Vaultoro,vaultoro,UK,🇬🇧,Western Europe,,False,,176.0
+VBTC,vbtc,Vietnam,🇻🇳,East Asia,,False,,177.0
+WavesDEX,wavesdex,DEX,🏳,None,,False,,178.0
+xena,xena,UK,🇬🇧,Western Europe,,True,No Fees,179.0
+XS2,xs2,Australia,🇺🇸,Oceania,,False,,180.0
+Yobit,yobit,Unknown,🏴‍,Unknown,,False,,181.0
+Zaif,zaif,Japan,🇯🇵,East Asia,,True,No Fees,182.0
+ZB,zb,China (formerly),🇨🇳,East Asia,,False,,183.0
+ZBG,zbg,Hong Kong,🇭🇰,East Asia,,True,Transaction Mining,184.0
+Abucoins,abucoins,Poland,🇵🇱,Eastern Europe,,False,,185.0
+altilly,altilly,Hong Kong,🇭🇰,East Asia,,False,,186.0
+ataix,ataix,Estonia,????,Eastern Europe,,False,,187.0
+bitci,bitci,Turkey,🇹🇷,Eastern Europe,,False,,188.0
+BitFlip,bitflip,Hong Kong,🇭🇰,East Asia,,False,,189.0
+BitGrail,bitgrail,Italy,🇮🇹,Western Europe,,False,,190.0
+bitspark,bitspark,Hong Kong,🇭🇰,East Asia,,False,,191.0
+BTC38,btc38,China (formerly),🇨🇳,East Asia,,False,,192.0
+BTCChina,btcChina,Hong Kong,🇭🇰,East Asia,,False,,193.0
+BTCE,btce,Unknown,🏴‍,Unknown,,False,,194.0
+btcXchange,btcxchange,Romania,,Eastern Europe,Bust,False,,195.0
+BTCXIndia,btcxindia,India,🇮🇳,South Asia,,False,,196.0
+BTER,bter,British Virgin Islands,🇻🇬,Western Europe,,False,,197.0
+bybit,bybit,Singapore,🇸🇬,East Asia,,False,,198.0
+CCEDK,ccedk,Denmark,🇩🇰,Western Europe,,False,,200.0
+CHBTC,chbtc,China (formerly),🇨🇳,East Asia,,False,,201.0
+Coincap,coincap,Malaysia,🇲🇾,East Asia,,False,,202.0
+CoinsBank,coinsbank,UK,🇬🇧,Western Europe,,False,,203.0
+Coinse,coinse,Unknown,🏴‍,Unknown,Bust,False,,204.0
+Coinsetter,coinsetter,USA,🇺🇸,North America,Aquired by Kraken,False,,205.0
+cryptofacilities,cryptofacilities,UK,🇬🇧,Western Europe,acquired by Kraken,False,,206.0
+CryptoX,cryptox,UK,🇬🇧,Western Europe,,False,,207.0
+Cryptsy,cryptsy,USA,🇺🇸,North America,Bust,False,,208.0
+darbfinance,darbfinance,Estonia,????,Eastern Europe,,False,,209.0
+decoin,decoin,Estonia,????,Eastern Europe,,False,,210.0
+erisx,erisx,USA,🇺🇸,North America,,False,,211.0
+EthexIndia,ethexindia,India,🇮🇳,South Asia,,False,,212.0
+Foxbit,foxbit,Brazil,🇧🇷,South America,,False,,213.0
+Gnosis,gnosis,DEX,🏳,None,,False,,214.0
+Huobi,huobi,China (formerly),🇨🇳,East Asia,,False,,215.0
+Jubi,jubi,Japan,🇯🇵,East Asia,,False,,216.0
+MonetaGo,monetago,USA,🇺🇸,North America,,False,,217.0
+MtGox,mtgox,Japan,🇯🇵,East Asia,,False,,218.0
+Novaexchange,novaexchange,Tanzania,🇹🇿,Africa,,False,,219.0
+onederx,onederx,Estonia,????,Eastern Europe,,False,,220.0
+Qryptos,qryptos,Japan,🇯🇵,East Asia,,False,,221.0
+Quoine,quoine,Japan,🇯🇵,East Asia,,False,,222.0
+raidofinance,raidofinance,Estonia,????,Eastern Europe,,False,,223.0
+StocksExchangeio,stocksexchangeio,UK,🇬🇧,Western Europe,,False,,224.0
+Surbitcoin,surbitcoin,Venezuela,🇻🇪,South America,,False,,225.0
+TDAX,tdax,Thailand,🇹🇭,Southeast Asia,,False,,226.0
+thore,thore,Switzerland,🇨🇭,Western Europe,,False,,227.0
+Unocoin,unocoin,India,🇮🇳,South Asia,,False,,228.0
+Velox,velox,DEX,🏳,None,,False,,229.0
+ViaBTC,viabtc,China (formerly),🇨🇳,East Asia,,False,,230.0
+WEX,wex,Singapore,🇸🇬,East Asia,,False,,231.0
+WorldCryptoCap,worldcryptocap,China (formerly),🇨🇳,East Asia,,False,,232.0
+Yacuna,yacuna,UK,🇬🇧,Western Europe,,False,,233.0
+Yunbi,yunbi,China (formerly),🇨🇳,East Asia,,False,,234.0
+Zecoex,zecoex,India,🇮🇳,South Asia,,False,,235.0
+zloadr,zloadr,UK,🇬🇧,Western Europe,,False,,236.0

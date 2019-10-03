@@ -1,6 +1,10 @@
 # Database files
 .db
 
+# OLD versions
+
+OLD/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

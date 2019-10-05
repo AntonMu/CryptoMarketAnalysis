@@ -9,6 +9,13 @@ from threading import Thread
 import sqlite3
 import time
 import json
+import random
+from lxml.html import fromstring
+import requests
+from itertools import cycle
+import traceback
+
+
 Data_Path = 'Data'
 Result_Path = 'Results'
 for path in [Data_Path,Result_Path]:
@@ -18,29 +25,53 @@ for path in [Data_Path,Result_Path]:
 def unix_time(d):
     return calendar.timegm(d.timetuple())
 
-def partition(pair_list,threads=4):
-    np.array_split(range(len(pair_list)),threads)
-    return np.array_split(range(len(pair_list)),threads)
+def get_proxies(number = 1000):
+    url = 'https://free-proxy-list.net/'
+    response = requests.get(url)
+    parser = fromstring(response.text)
+    proxies = set()
+    for i in parser.xpath('//tbody/tr')[:number]:
+        if i.xpath('.//td[7][contains(text(),"yes")]'):
+            proxy = ":".join([i.xpath('.//td[1]/text()')[0], i.xpath('.//td[2]/text()')[0]])
+            proxies.add(proxy)
+    return proxies
 
-def download_rows(pair_list,res_index=0,start=0,end=0,sleep_time=60):
+def partition(pair_list,threads=4,shuffle=False):
+    pair_len = len(pair_list)
+    if shuffle:
+        nums = list(range(len(pair_list)))
+        random.shuffle(nums)
+        return  np.array_split(nums,threads)
+    else:
+        return np.array_split(range(pair_len),threads)
+
+def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=60):
+    proxies = get_proxies()
+    proxy_pool = cycle(proxies)
+    proxy = next(proxy_pool)
+    
     start_time = time.time()
     res_df = pd.DataFrame()
     cur_sleep_time = sleep_time
-    if not end:
-        end = len(pair_list)
-    for index,row in pair_list[start:end].iterrows():
+    if not index_range.all():
+        #if not given, do everything
+        index_range = range(len(pair_list))
+    for index,row in pair_list.iloc[index_range].iterrows():
         crypto = row['Crypto']
         fiat = row['Fiat']
         ex = row['Exchange']
-        try:
-            hit_url = 'https://min-api.cryptocompare.com/data/histoday?fsym='+str(crypto)+'&tsym='+str(fiat)+'&limit=2000&aggregate=1&toTs='+str(unix_time(end_date))+'&e='+ str(ex)
-            #Check for rate limit! If we hit rate limit, then wait!
-            while True:
-                d = json.loads(requests.get(hit_url).text)
+#         try:
+        hit_url = 'https://min-api.cryptocompare.com/data/histoday?fsym='+str(crypto)+'&tsym='+str(fiat)+'&limit=2000&aggregate=1&toTs='+str(unix_time(end_date))+'&e='+ str(ex)
+        #Check for rate limit! If we hit rate limit, then wait!
+        counter = 0
+        while True:
+            try:
+                d = json.loads(requests.get(hit_url,proxies={"http": proxy, "https": proxy}).text)
+                counter = 0
                 if d['Response'] =='Success':
                     df = pd.DataFrame(d["Data"])
                     if index%1000==0:
-                        print('hitting', ex, crypto.encode("utf-8"), fiat, 'on thread', res_index) 
+                        print('hitting', ex, crypto.encode("utf-8"), fiat, 'on thread', thread_index) 
                     if not df.empty:
                         df['Source']=ex
                         df['From']=crypto
@@ -50,17 +81,15 @@ def download_rows(pair_list,res_index=0,start=0,end=0,sleep_time=60):
                     cur_sleep_time = sleep_time
                     break
                 else:
-                    cur_sleep_time = int((np.random.rand()+.5)*cur_sleep_time*1.5)
-                    if cur_sleep_time>1800:
-                        print('Hit rate limit on thread %d, waiting for %ds'%(res_index,cur_sleep_time))
-                    time.sleep(cur_sleep_time)
-                
-        except Exception as err:
-            time.sleep(15)
-            print('problem with',ex.encode("utf-8"),crypto,fiat)
+                    time.sleep(int((np.random.rand()+.5)*sleep_time))
+            except Exception as err:
+                proxy = next(proxy_pool)
+                counter +=1
+                if counter%10==0:
+                    print('Unable to connect to proxy %s on thread %d for %d times'%(str(proxy),thread_index,counter))
     end_time = time.time()
-    result_dfs[res_index] = res_df
-    print('Total time spent %ds on thread %d'%(end_time-start_time,res_index))
+    result_dfs[thread_index] = res_df
+    print('Total time spent %ds on thread %d'%(end_time-start_time,thread_index))
 
 end_date = datetime.today()
 
@@ -69,13 +98,13 @@ conn = sqlite3.connect(os.path.join(Data_Path,"CCC"+str(datetime.today())[:10]+"
 #Benchmark
 pair_list = pd.read_csv(os.path.join(Data_Path,"Exchange_Pair_List.csv"))
 
-threads = 4
-parts = partition(pair_list,threads)
+threads = 90
+parts = partition(pair_list,threads,shuffle=True)
 thread_list = [0 for _ in range(threads)]
 result_dfs = [0 for _ in range(threads)]
 
-for i, pair in enumerate(parts):
-    thread_list[i] = Thread(target=download_rows, args=(pair_list,i,pair[0],pair[-1],))
+for i, part in enumerate(parts):
+    thread_list[i] = Thread(target=download_rows, args=(pair_list,i,part,))
 for i in range(threads):
     # starting thread i 
     thread_list[i].start() 

@@ -67,7 +67,6 @@ def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=60):
         while True:
             try:
                 d = json.loads(requests.get(hit_url,proxies={"http": proxy, "https": proxy}).text)
-                counter = 0
                 if d['Response'] =='Success':
                     df = pd.DataFrame(d["Data"])
                     if index%1000==0:
@@ -79,9 +78,14 @@ def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=60):
                         df=df[df['volumeto']>0.0]
                         res_df = res_df.append(df)
                     cur_sleep_time = sleep_time
+                    counter = 0
                     break
                 else:
                     time.sleep(int((np.random.rand()+.5)*sleep_time))
+                    proxy = next(proxy_pool)
+                    counter +=1
+                    if counter%10==0:
+                        print('Hit rate limit while connecting to proxy %s on thread %d for %d times'%(str(proxy),thread_index,counter))
             except Exception as err:
                 proxy = next(proxy_pool)
                 counter +=1

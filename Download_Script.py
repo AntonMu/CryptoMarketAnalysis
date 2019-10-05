@@ -45,7 +45,7 @@ def partition(pair_list,threads=4,shuffle=False):
     else:
         return np.array_split(range(pair_len),threads)
 
-def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=60):
+def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=15):
     proxies = get_proxies()
     proxy_pool = cycle(proxies)
     proxy = next(proxy_pool)
@@ -84,12 +84,18 @@ def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=60):
                     time.sleep(int((np.random.rand()+.5)*sleep_time))
                     proxy = next(proxy_pool)
                     counter +=1
-                    if counter%10==0:
+                    if counter%100==0:
+                        #Refresh proxy list
+                        proxies = get_proxies()
+                        proxy_pool = cycle(proxies)
                         print('Hit rate limit while connecting to proxy %s on thread %d for %d times'%(str(proxy),thread_index,counter))
             except Exception as err:
                 proxy = next(proxy_pool)
                 counter +=1
-                if counter%10==0:
+                if counter%100==0:
+                    #Refresh proxy list
+                    proxies = get_proxies()
+                    proxy_pool = cycle(proxies)
                     print('Unable to connect to proxy %s on thread %d for %d times'%(str(proxy),thread_index,counter))
     end_time = time.time()
     result_dfs[thread_index] = res_df
@@ -102,7 +108,7 @@ conn = sqlite3.connect(os.path.join(Data_Path,"CCC"+str(datetime.today())[:10]+"
 #Benchmark
 pair_list = pd.read_csv(os.path.join(Data_Path,"Exchange_Pair_List.csv"))
 
-threads = 90
+threads = 200
 parts = partition(pair_list,threads,shuffle=True)
 thread_list = [0 for _ in range(threads)]
 result_dfs = [0 for _ in range(threads)]

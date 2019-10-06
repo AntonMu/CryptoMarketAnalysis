@@ -49,7 +49,7 @@ def partition(pair_list,threads=4,shuffle=False):
             splits.append(list(range(i,pair_len,threads)))
         return splits
 
-def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=15):
+def download_rows(pair_list,thread_index=0,index_range=np.array([]),sleep_time=15):
     proxies = get_proxies()
     proxy_pool = cycle(proxies)
     proxy = next(proxy_pool)
@@ -57,9 +57,10 @@ def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=15):
     start_time = time.time()
     res_df = pd.DataFrame()
     cur_sleep_time = sleep_time
-    if not index_range.all():
+    if not np.array(index_range).any():
         #if not given, do everything
         index_range = range(len(pair_list))
+        print('Using the full range')
     for index,row in pair_list.iloc[index_range].iterrows():
         crypto = row['Crypto']
         fiat = row['Fiat']

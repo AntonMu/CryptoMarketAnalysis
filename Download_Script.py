@@ -43,7 +43,11 @@ def partition(pair_list,threads=4,shuffle=False):
         random.shuffle(nums)
         return  np.array_split(nums,threads)
     else:
-        return np.array_split(range(pair_len),threads)
+        #We split it evenly
+        splits = []
+        for i in range(threads):
+            splits.append(list(range(i,pair_len,threads)))
+        return splits
 
 def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=15):
     proxies = get_proxies()
@@ -109,7 +113,7 @@ conn = sqlite3.connect(os.path.join(Data_Path,"CCC"+str(datetime.today())[:10]+"
 pair_list = pd.read_csv(os.path.join(Data_Path,"Exchange_Pair_List.csv"))
 
 threads = 200
-parts = partition(pair_list,threads,shuffle=True)
+parts = partition(pair_list,threads,shuffle=False)
 thread_list = [0 for _ in range(threads)]
 result_dfs = [0 for _ in range(threads)]
 

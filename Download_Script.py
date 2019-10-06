@@ -49,7 +49,7 @@ def partition(pair_list,threads=4,shuffle=False):
             splits.append(list(range(i,pair_len,threads)))
         return splits
 
-def download_rows(pair_list,thread_index=0,index_range=np.array([]),sleep_time=15):
+def download_rows(pair_list,thread_index=0,index_range=np.array([]),sleep_time=15,threads=100):
     proxies = get_proxies()
     proxy_pool = cycle(proxies)
     proxy = next(proxy_pool)
@@ -74,7 +74,7 @@ def download_rows(pair_list,thread_index=0,index_range=np.array([]),sleep_time=1
                 d = json.loads(requests.get(hit_url,proxies={"http": proxy, "https": proxy}).text)
                 if d['Response'] =='Success':
                     df = pd.DataFrame(d["Data"])
-                    if (index-thread_index)%1000==0: #We need to offset the thread index or else only the first index range will get hit
+                    if (index-thread_index)%(1000*threads)==0: #We need to offset the thread index or else only the first index range will get hit
                         print('hitting', ex, crypto.encode("utf-8"), fiat, 'on thread', thread_index) 
                     if not df.empty:
                         df['Source']=ex

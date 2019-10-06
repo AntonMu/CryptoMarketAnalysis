@@ -75,7 +75,7 @@ def download_rows(pair_list,thread_index=0,index_range=np.array([]),sleep_time=1
                 if d['Response'] =='Success':
                     df = pd.DataFrame(d["Data"])
                     if (index-thread_index)%(100*threads)==0: #We need to offset the thread index or else only the first index range will get hit
-                        print('hitting', ex, crypto.encode("utf-8"), fiat, 'on thread', thread_index) 
+                        print('hitting', ex, crypto.encode("utf-8"), fiat, 'on thread', thread_index, 'round',index//(100*threads)) 
                     if not df.empty:
                         df['Source']=ex
                         df['From']=crypto

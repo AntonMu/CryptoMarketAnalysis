@@ -73,7 +73,7 @@ def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=15):
                 d = json.loads(requests.get(hit_url,proxies={"http": proxy, "https": proxy}).text)
                 if d['Response'] =='Success':
                     df = pd.DataFrame(d["Data"])
-                    if index%1000==0:
+                    if (index-thread_index)%1000==0: #We need to offset the thread index or else only the first index range will get hit
                         print('hitting', ex, crypto.encode("utf-8"), fiat, 'on thread', thread_index) 
                     if not df.empty:
                         df['Source']=ex

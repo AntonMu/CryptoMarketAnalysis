@@ -93,6 +93,11 @@ def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=15):
                         proxies = get_proxies()
                         proxy_pool = cycle(proxies)
                         print('Hit rate limit while connecting to proxy %s on thread %d for %d times'%(str(proxy),thread_index,counter))
+                        if counter>1000:
+                            #If nothing is happening after such a long time, we just skip it
+                            print('Problem with', ex, crypto.encode("utf-8"), fiat, 'on thread', thread_index)
+                            counter = 0
+                            break 
             except Exception as err:
                 proxy = next(proxy_pool)
                 counter +=1
@@ -112,7 +117,7 @@ conn = sqlite3.connect(os.path.join(Data_Path,"CCC"+str(datetime.today())[:10]+"
 #Benchmark
 pair_list = pd.read_csv(os.path.join(Data_Path,"Exchange_Pair_List.csv"))
 
-threads = 200
+threads = 100
 parts = partition(pair_list,threads,shuffle=False)
 thread_list = [0 for _ in range(threads)]
 result_dfs = [0 for _ in range(threads)]

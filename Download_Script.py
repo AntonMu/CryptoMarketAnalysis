@@ -43,9 +43,13 @@ def partition(pair_list,threads=4,shuffle=False):
         random.shuffle(nums)
         return  np.array_split(nums,threads)
     else:
-        return np.array_split(range(pair_len),threads)
+        #We split it evenly
+        splits = []
+        for i in range(threads):
+            splits.append(list(range(i,pair_len,threads)))
+        return splits
 
-def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=60):
+def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=15):
     proxies = get_proxies()
     proxy_pool = cycle(proxies)
     proxy = next(proxy_pool)
@@ -67,10 +71,9 @@ def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=60):
         while True:
             try:
                 d = json.loads(requests.get(hit_url,proxies={"http": proxy, "https": proxy}).text)
-                counter = 0
                 if d['Response'] =='Success':
                     df = pd.DataFrame(d["Data"])
-                    if index%1000==0:
+                    if (index-thread_index)%1000==0: #We need to offset the thread index or else only the first index range will get hit
                         print('hitting', ex, crypto.encode("utf-8"), fiat, 'on thread', thread_index) 
                     if not df.empty:
                         df['Source']=ex
@@ -79,13 +82,29 @@ def download_rows(pair_list,thread_index=0,index_range=[],sleep_time=60):
                         df=df[df['volumeto']>0.0]
                         res_df = res_df.append(df)
                     cur_sleep_time = sleep_time
+                    counter = 0
                     break
                 else:
                     time.sleep(int((np.random.rand()+.5)*sleep_time))
+                    proxy = next(proxy_pool)
+                    counter +=1
+                    if counter%100==0:
+                        #Refresh proxy list
+                        proxies = get_proxies()
+                        proxy_pool = cycle(proxies)
+                        print('Hit rate limit while connecting to proxy %s on thread %d for %d times'%(str(proxy),thread_index,counter))
+                        if counter>1000:
+                            #If nothing is happening after such a long time, we just skip it
+                            print('Problem with', ex, crypto.encode("utf-8"), fiat, 'on thread', thread_index)
+                            counter = 0
+                            break 
             except Exception as err:
                 proxy = next(proxy_pool)
                 counter +=1
-                if counter%10==0:
+                if counter%100==0:
+                    #Refresh proxy list
+                    proxies = get_proxies()
+                    proxy_pool = cycle(proxies)
                     print('Unable to connect to proxy %s on thread %d for %d times'%(str(proxy),thread_index,counter))
     end_time = time.time()
     result_dfs[thread_index] = res_df
@@ -98,8 +117,8 @@ conn = sqlite3.connect(os.path.join(Data_Path,"CCC"+str(datetime.today())[:10]+"
 #Benchmark
 pair_list = pd.read_csv(os.path.join(Data_Path,"Exchange_Pair_List.csv"))
 
-threads = 90
-parts = partition(pair_list,threads,shuffle=True)
+threads = 100
+parts = partition(pair_list,threads,shuffle=False)
 thread_list = [0 for _ in range(threads)]
 result_dfs = [0 for _ in range(threads)]
 
